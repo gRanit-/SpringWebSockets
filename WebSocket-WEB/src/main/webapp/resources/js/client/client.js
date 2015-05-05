@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 // Create stomp client over sockJS protocol (see Note 1)
+//WebSocket to nazwa aplikacji na serwerze
  var socket = new SockJS("/WebSocket/hello");
  var stompClient = Stomp.over(socket);
 
@@ -8,7 +9,6 @@ $(document).ready(function() {
  var connectCallback = function() {
       alert("connected!");
       stompClient.subscribe('/topic/greetings', function(greeting){
-      alert(greeting);
            alert(JSON.parse(greeting.body).content);
       });
  };
