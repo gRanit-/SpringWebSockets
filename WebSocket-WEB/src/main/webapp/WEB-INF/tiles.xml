@@ -4,5 +4,7 @@
 <tiles-definitions>
 
     <definition name="client" template="/WEB-INF/view/client.jsp"/>
+    <definition name="signUp" template="/WEB-INF/view/user/register.jsp"/>
+    <definition name="login" template="/WEB-INF/view/user/login.jsp"/>
 
 </tiles-definitions>

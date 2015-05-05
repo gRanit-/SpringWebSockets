@@ -17,13 +17,20 @@ public class UserDetails extends SocialUser {
 	private String password;
 	private Role role;
 	private Set<GrantedAuthority> autorities;
+	private SocialMediaService socialSignInProvider;
+
 
 	public UserDetails(String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
 	}
 
-	public UserDetails(String username, String password, Collection<? extends GrantedAuthority> authorities) {
+	public UserDetails(String username, String password, Collection<? extends GrantedAuthority> authorities, SocialMediaService socialSignInProvider, String lastname, String firstname, Long id, Role role) {
 		super(username, password, authorities);
+		this.socialSignInProvider = socialSignInProvider;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.id = id;
+		this.role = role;
 	}
 
 	public Set<GrantedAuthority> getAutorities() {

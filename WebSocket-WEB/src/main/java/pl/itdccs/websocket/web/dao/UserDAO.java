@@ -1,4 +1,4 @@
-package pl.itdccs.websocket.web.services;
+package pl.itdccs.websocket.web.dao;
 
 import pl.itdccs.websocket.web.entities.User;
 

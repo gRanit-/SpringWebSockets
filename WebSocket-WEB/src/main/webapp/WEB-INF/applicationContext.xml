@@ -10,4 +10,11 @@
     <import resource="persistence-config.xml"/>
     <import resource="security-config.xml"/>
 
+    <context:component-scan base-package="pl.itdccs.websocket.web"/>
+
+    <!--<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="properties/"/>
+        <property name="useCodeAsDefaultMessage" value="true"/>
+    </bean>-->
+
 </beans>

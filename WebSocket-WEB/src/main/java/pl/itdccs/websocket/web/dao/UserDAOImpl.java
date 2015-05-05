@@ -1,4 +1,4 @@
-package pl.itdccs.websocket.web.services;
+package pl.itdccs.websocket.web.dao;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -15,6 +15,7 @@ import java.util.List;
 /**
  * Created by mc109881 on 2015-05-05.
  */
+
 @Repository
 public class UserDAOImpl implements UserDAO {
 	Logger logger = Logger.getLogger(this.getClass());
@@ -89,7 +90,7 @@ public class UserDAOImpl implements UserDAO {
 		try {
 			session = this.sessionFactory.openSession();
 			Transaction tx = session.getTransaction();
-			user = (User) session.createCriteria(User.class).add(Restrictions.eq("username", username)).uniqueResult();
+			user = (User) session.createCriteria(User.class).add(Restrictions.eq("email", username)).uniqueResult();
 
 		} catch (Throwable throwable) {
 
